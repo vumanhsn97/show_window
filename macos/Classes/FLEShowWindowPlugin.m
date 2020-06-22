@@ -25,6 +25,8 @@ static NSString *const _kPrintLog = @"Window.Log";
 @implementation FLEShowWindowPlugin {
   // The channel used to communicate with Flutter.
   FlutterMethodChannel *_channel;
+
+  id<FlutterPluginRegistrar> _registrar;
 }
 
 + (void)registerWithRegistrar:(id<FlutterPluginRegistrar>)registrar {
@@ -38,6 +40,7 @@ static NSString *const _kPrintLog = @"Window.Log";
   self = [super init];
   if (self) {
     _channel = channel;
+    _registrar = registrar;
   }
   return self;
 }
@@ -65,6 +68,7 @@ static NSString *const _kPrintLog = @"Window.Log";
     [window setTitle:@"Mobile Devices"];
     [window setMovable:true];
     [window setMovableByWindowBackground:true];
+    [window setContentView:_registrar.view];
     methodResult = helloWorld;
   } else {
     methodResult = FlutterMethodNotImplemented;
