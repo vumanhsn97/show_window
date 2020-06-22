@@ -1,4 +1,4 @@
-name: color_panel
+name: show_window
 description: Provides access to the platform's native color picker.
 version: 0.1.0
 
