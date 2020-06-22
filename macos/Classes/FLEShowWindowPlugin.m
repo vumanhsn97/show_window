@@ -57,13 +57,14 @@ static NSString *const _kPrintLog = @"Window.Log";
     NSString *const helloWorld = @"Wellcome to MacOS Method Channel :)";
     NSRect frame = NSMakeRect(0, 0, 400, 500);
     NSWindow* window  = [[NSWindow alloc] initWithContentRect:frame
-                    styleMask:NSBorderlessWindowMask
+                    styleMask:NSTitledWindowMask
                     backing:NSBackingStoreBuffered
                     defer:true];
     [window setBackgroundColor:[NSColor greenColor]];
     [window makeKeyAndOrderFront:NSApp];
     [window setTitle:@"Mobile Devices"];
     [window setMovable:true];
+    [window setMovableByWindowBackground:true];
     methodResult = helloWorld;
   } else {
     methodResult = FlutterMethodNotImplemented;
