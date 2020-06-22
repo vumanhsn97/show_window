@@ -55,13 +55,13 @@ static NSString *const _kPrintLog = @"Window.Log";
   methodResult = [FlutterError errorWithCode:@"Bad arguments" message:errorString details:nil];
   } else if ([call.method isEqualToString:_kPrintLog]) {
     NSString *const helloWorld = @"Wellcome to MacOS Method Channel :)";
-    NSWindow window =  NSWindow(contentRect: NSMakeRect(0, 0, 1024, 768),
+    NSWindow *window =  NSWindow(contentRect: NSMakeRect(0, 0, 1024, 768),
             styleMask: [.closable, .titled],
             backing: .buffered,
             defer: false);
-    window.title = "Hey, new Window!";
-    window.center();
-    window.orderFrontRegardless();
+    // window.title = "Hey, new Window!";
+    // window.center();
+    // window.orderFrontRegardless();
     methodResult = helloWorld;
   } else {
     methodResult = FlutterMethodNotImplemented;
