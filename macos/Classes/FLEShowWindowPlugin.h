@@ -17,9 +17,9 @@
 #import <FlutterMacOS/FlutterMacOS.h>
 
 /**
- * A FlutterPlugin to manage macOS's shared NSColorPanel singleton.
+ * A FlutterPlugin to manage macOS's shared NSShowWindow singleton.
  * Responsible for managing the panel's display state and sending selected color data to Flutter.
  */
-@interface FLEColorPanelPlugin : NSObject <FlutterPlugin, NSWindowDelegate>
+@interface FLEShowWindowPlugin : NSObject <FlutterPlugin, NSWindowDelegate>
 
 @end

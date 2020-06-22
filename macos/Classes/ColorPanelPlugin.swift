@@ -15,8 +15,8 @@
 import FlutterMacOS
 import Foundation
 
-public class ColorPanelPlugin: NSObject, FlutterPlugin {
+public class ShowWindowPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
-    FLEColorPanelPlugin.register(with: registrar)
+    FLEShowWindowPlugin.register(with: registrar)
   }
 }

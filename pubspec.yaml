@@ -10,9 +10,9 @@ flutter:
   plugin:
     platforms:
       linux:
-        pluginClass: ColorPanelPlugin
+        pluginClass: ShowWindowPlugin
       macos:
-        pluginClass: ColorPanelPlugin
+        pluginClass: ShowWindowPlugin
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
