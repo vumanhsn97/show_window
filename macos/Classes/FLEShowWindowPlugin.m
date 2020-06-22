@@ -32,11 +32,13 @@ static NSString *const _kPrintLog = @"Window.Log";
 + (void)registerWithRegistrar:(id<FlutterPluginRegistrar>)registrar {
   FlutterMethodChannel *channel = [FlutterMethodChannel methodChannelWithName:kChannelName
                                                               binaryMessenger:registrar.messenger];
-  FLEShowWindowPlugin *instance = [[FLEShowWindowPlugin alloc] initWithChannel:channel];
+  FLEShowWindowPlugin *instance = [[FLEShowWindowPlugin alloc] initWithChannel:channel 
+                                                              registrar:registrar];
   [registrar addMethodCallDelegate:instance channel:channel];
 }
 
-- (instancetype)initWithChannel:(FlutterMethodChannel *)channel {
+- (instancetype)initWithChannel:(FlutterMethodChannel *)channel
+                      registrar:(id<FlutterPluginRegistrar>)registrar {
   self = [super init];
   if (self) {
     _channel = channel;
