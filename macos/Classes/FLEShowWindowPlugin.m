@@ -55,11 +55,11 @@ static NSString *const _kPrintLog = @"Window.Log";
   methodResult = [FlutterError errorWithCode:@"Bad arguments" message:errorString details:nil];
   } else if ([call.method isEqualToString:_kPrintLog]) {
     NSString *const helloWorld = @"Wellcome to MacOS Method Channel :)";
-    NSRect frame = NSMakeRect(0, 0, 200, 200);
+    NSRect frame = NSMakeRect(0.8, 0, 200, 200);
     NSWindow* window  = [[NSWindow alloc] initWithContentRect:frame
                     styleMask:NSBorderlessWindowMask
                     backing:NSBackingStoreBuffered
-                    defer:false];
+                    defer:true];
     [window setBackgroundColor:[NSColor blueColor]];
     [window makeKeyAndOrderFront:NSApp];
     methodResult = helloWorld;
