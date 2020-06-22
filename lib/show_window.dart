@@ -31,7 +31,7 @@ class ShowWindow {
      _platformChannel.invokeMethod(_kShowWindowMethod);
   }
 
-  Future<void> printLog() async{
+  Future<String> printLog() async{
     return await _platformChannel.invokeMethod('Window.Log');
   }
 }
