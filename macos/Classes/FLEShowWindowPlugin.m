@@ -63,7 +63,7 @@ static NSString *const _kPrintLog = @"Window.Log";
     [window setBackgroundColor:[NSColor greenColor]];
     [window makeKeyAndOrderFront:NSApp];
     [window setTitle:@"Mobile Devices"];
-    [window setMovable:true]
+    [window setMovable:true];
     methodResult = helloWorld;
   } else {
     methodResult = FlutterMethodNotImplemented;
