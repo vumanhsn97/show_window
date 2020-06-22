@@ -56,10 +56,10 @@ static NSString *const _kPrintLog = @"Window.Log";
   } else if ([call.method isEqualToString:_kPrintLog]) {
     NSString *const helloWorld = @"Wellcome to MacOS Method Channel :)";
     NSRect frame = NSMakeRect(0, 0, 200, 200);
-    NSWindow* window  = [[[NSWindow alloc] initWithContentRect:frame
+    NSWindow* window  = [[NSWindow alloc] initWithContentRect:frame
                     styleMask:NSBorderlessWindowMask
                     backing:NSBackingStoreBuffered
-                    defer:NO] autorelease];
+                    defer:false];
     [window setBackgroundColor:[NSColor blueColor]];
     [window makeKeyAndOrderFront:NSApp];
     methodResult = helloWorld;
