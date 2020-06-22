@@ -54,12 +54,6 @@ static NSString *const _kPrintLog = @"Window.Log";
 - (void)handleMethodCall:(FlutterMethodCall *)call result:(FlutterResult)result {
   id methodResult = nil;
   if ([call.method isEqualToString:_kShowWindowMethod]) {
-   NSString *errorString = [NSString
-          stringWithFormat:@"Malformed call for %@. Expected an NSDictionary but got %@",
-                           _kShowWindowMethod, NSStringFromClass([call.arguments class])];
-  methodResult = [FlutterError errorWithCode:@"Bad arguments" message:errorString details:nil];
-  } else if ([call.method isEqualToString:_kPrintLog]) {
-    NSString *const helloWorld = @"Wellcome to MacOS Method Channel :)";
     NSRect frame = NSMakeRect(0, 0, 400, 500);
     NSWindow* window  = [[NSWindow alloc] initWithContentRect:frame
                     styleMask:NSTitledWindowMask
@@ -70,7 +64,9 @@ static NSString *const _kPrintLog = @"Window.Log";
     [window setTitle:@"Mobile Devices"];
     [window setMovable:true];
     [window setMovableByWindowBackground:true];
-    [window setContentView:_registrar.view];
+  } else if ([call.method isEqualToString:_kPrintLog]) {
+    NSString *const helloWorld = @"Wellcome to MacOS Method Channel :)";
+    
     methodResult = helloWorld;
   } else {
     methodResult = FlutterMethodNotImplemented;
