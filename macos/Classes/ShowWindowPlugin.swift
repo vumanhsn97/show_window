@@ -38,17 +38,13 @@ public class ShowWindowPlugin: NSObject, FlutterPlugin {
             let x: Double? = args?["x"] as? Double
             let y: Double? = args?["y"] as? Double
             let key: String = args?["key"] as! String
-            let url: String = args?["url"] as! String
-            let jsHandler: String = args?["jsMessage"] as! String
+            
             openNewWindow(
                 key: key,
-                url: url,
-                jsMessage: jsHandler,
                 x: x,
                 y: y,
                 width: width,
-                height: height,
-                result: result
+                height: height
             )
             break
         default:
