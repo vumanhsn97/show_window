@@ -27,7 +27,8 @@ public class ShowWindowPlugin: NSObject, FlutterPlugin {
         let instance = ShowWindowPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
-    func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+    
+  public static func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         switch call.method {
         case _kOpenWindowMethod:
             let args = call.arguments as? [String: Any]
