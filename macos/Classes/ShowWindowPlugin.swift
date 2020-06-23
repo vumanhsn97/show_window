@@ -24,7 +24,7 @@ public class ShowWindowPlugin: NSObject, FlutterPlugin {
 
   public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: kChannelName, binaryMessenger: registrar.messenger)
-        let instance = WindowManagerPlugin()
+        let instance = ShowWindowPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
     func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
@@ -78,7 +78,7 @@ public class ShowWindowPlugin: NSObject, FlutterPlugin {
         window.styleMask = NSWindow.StyleMask(rawValue: 0xf)
         window.backingType = .buffered
         RegisterGeneratedPlugins(registry: flutterController)
-        WindowManagerPlugin.register(with: flutterController.registrar(forPlugin: "WindowManagerPlugin"))
+        ShowWindowPlugin.register(with: flutterController.registrar(forPlugin: "ShowWindowPlugin"))
         window.contentViewController = flutterController
         if let screen = window.screen {
             let screenRect = screen.visibleFrame
