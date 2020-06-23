@@ -15,12 +15,13 @@
 import FlutterMacOS
 import Foundation
 
+let kChannelName = "inspireui/showwindow"
+let _kOpenWindowMethod = "Window.Open"
+let _kCloseWindowMethod = "Window.Close"
+let _kStatusWindowMethod = "Window.Status"
+let _kKeyWindowMethod = "Window.Key"
+
 class ShowWindowPlugin: NSObject, FlutterPlugin {
-  let kChannelName = "inspireui/showwindow"
-  let _kOpenWindowMethod = "Window.Open"
-  let _kCloseWindowMethod = "Window.Close"
-  let _kStatusWindowMethod = "Window.Status"
-  let _kKeyWindowMethod = "Window.Key"
 
   public static func register(with registrar: FlutterPluginRegistrar) {
       let channel = FlutterMethodChannel(name: kChannelName, binaryMessenger: registrar.messenger)
@@ -30,7 +31,8 @@ class ShowWindowPlugin: NSObject, FlutterPlugin {
     
   func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
       switch call.method {
-        
+        default:
+            result(FlutterMethodNotImplemented)
       }
   }
 }
