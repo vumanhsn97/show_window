@@ -21,7 +21,7 @@ let _kCloseWindowMethod = "Window.Close"
 let _kStatusWindowMethod = "Window.Status"
 let _kKeyWindowMethod = "Window.Key"
 
-class ShowWindowPlugin: NSObject, FlutterPlugin {
+public class ShowWindowPlugin: NSObject, FlutterPlugin {
 
   public static func register(with registrar: FlutterPluginRegistrar) {
       let channel = FlutterMethodChannel(name: kChannelName, binaryMessenger: registrar.messenger)
@@ -29,7 +29,7 @@ class ShowWindowPlugin: NSObject, FlutterPlugin {
       registrar.addMethodCallDelegate(instance, channel: channel)
   }
     
-  func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
+  public static func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
       switch call.method {
         default:
             result(FlutterMethodNotImplemented)
